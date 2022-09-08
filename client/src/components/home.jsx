@@ -32,6 +32,11 @@ export default function Home(){
         dispatch(filterDiet('sin filtro'))
         refreshPage()
     }
+
+    useEffect(() => {
+        setCurrentPage(1)
+    }, [filteredRecipes])
+
     useEffect(() => {
         dispatch(fetchRecipes())
     }, [])
@@ -46,7 +51,7 @@ export default function Home(){
           <Paginado 
           recipesPerPage={recipesPerPage}
           recipes={filteredRecipes.length? filteredRecipes.length : recipes.length}
-          paginado={paginado}/>
+          setCurrentPage={paginado}/>
         {currentRecipes?
         currentRecipes.map((recipe)=>{
             if(recipe.id.length > 6){

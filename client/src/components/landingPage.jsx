@@ -5,10 +5,10 @@ import style from '../styleSheets/landingPage.css'
 export default function LandingPage(){
 
     return (
-    <div>
-        <h1>Landing Page</h1>
-        <Link to='/home'> Home </Link>
+    <div className={style.container}>
+        <h1 className={style.h1}>The food app</h1>
+        <Link to='/home' className={style.linkHome}> Lets get started </Link>
     </div>
-)
+    )
 
 }

@@ -1,6 +1,6 @@
-import { filterDiet, getDiets , fetchRecipes } from "../store/actions";
+import { filterDiet, getDiets } from "../store/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 
 export default function FilterDiets(){
@@ -12,9 +12,6 @@ export default function FilterDiets(){
     let diets = useSelector((state)=>state.diets);
 
     function onSelectChange(e){
-        if(e.target.value === 'sin filtro'){
-            dispatch(fetchRecipes())
-        } else
         dispatch(filterDiet(e.target.value))
     }
 

@@ -10,6 +10,7 @@ export default function Order(){
       <>
       <label htmlFor="selectHSOrder">Nombre</label>  
     <select name="select" onChange={onSelectChange}>
+    <option value="ordenar">ordenar por nombre</option>
     <option value="ascendente">A-Z</option>
     <option value="descendente">Z-A</option>
   </select>

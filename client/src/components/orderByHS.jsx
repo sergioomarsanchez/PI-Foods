@@ -10,6 +10,7 @@ export default function OrderByHS(){
     <>
     <label htmlFor="selectHSOrder">Health Socre</label>
     <select name="selectHSOrder" onChange={onSelectChange}>
+    <option value="order">ordenar por Health Score de...</option>
     <option value="ascendente">Menor-Mayor</option>
     <option value="descendente">Mayor-Menor</option>
   </select>

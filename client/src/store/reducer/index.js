@@ -12,17 +12,18 @@ export default function reducer(state = initialState, action){
         case FETCH_RECIPES:
             return {
                 ...state,
-                recipes: action.payload
+                recipes: action.payload,
+                filteredRecipes : action.payload
              }
 
         case SEARCH_RECIPE:
             return {
                 ...state,
-                recipe: action.payload
+                filteredRecipes: action.payload
             }
 
         case SORT:
-            let orderedRecipes = [...state.recipes]
+            let orderedRecipes = [...state.filteredRecipes]
 
             orderedRecipes = orderedRecipes.sort((a, b)=>{
                 if(a.name < b.name){
@@ -35,11 +36,11 @@ export default function reducer(state = initialState, action){
             })
             return {
                 ...state,
-                recipes: orderedRecipes
+                filteredRecipes: orderedRecipes
             }  
 
         case SORT_BY_HS:
-            let orderedRecipesByHS = [...state.recipes]
+            let orderedRecipesByHS = [...state.filteredRecipes]
     
             orderedRecipesByHS = orderedRecipesByHS.sort((a, b)=>{
                  if(a.healthScore < b.healthScore){
@@ -52,7 +53,7 @@ export default function reducer(state = initialState, action){
                 })
                 return {
                     ...state,
-                    recipes: orderedRecipesByHS
+                    filteredRecipes: orderedRecipesByHS
                 } 
 
         case FILTER_DIETS:

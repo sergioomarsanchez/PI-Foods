@@ -10,8 +10,7 @@ export const GET_DETAIL = 'GET_DETAIL';
 export const CLEAN_RECIPE = 'CLEAN_RECIPE';
 
 
-export function fetchRecipes(nameOrID){
-    if(!nameOrID){
+export function fetchRecipes(){
         return function (dispatch){
         axios.get(`http://localhost:3001/api/recipes/`)
         .then((recipes)=>{
@@ -22,30 +21,33 @@ export function fetchRecipes(nameOrID){
             })
         .catch(e=>console.log(e))
     }
-} else if(typeof Number(nameOrID) === 'number' || nameOrID.includes('-')){
-        return function(dispatch){axios.get(`http://localhost:3001/api/recipes/${nameOrID}`)
+}
+
+export function searchRecipeById(id){
+        return function(dispatch){axios.get(`http://localhost:3001/api/recipes/${id}`)
         .then((recipe)=>{
             dispatch({
-                type:FETCH_RECIPES,
+                type:SEARCH_RECIPE,
                 payload:[recipe.data]
              })
         })
         .catch(e=>console.log(e));    
         
     }
-} else if(nameOrID){
+} 
+
+export function searchRecipe(name){
         return function (dispatch){
-        axios.get(`http://localhost:3001/api/recipes?name=${nameOrID}`)
+        axios.get(`http://localhost:3001/api/recipes?name=${name}`)
         .then((recipes)=>{
              dispatch({
-                type:FETCH_RECIPES,
+                type:SEARCH_RECIPE,
                 payload:recipes.data
                 })
             })
             .catch(e=>console.log(e))
     }
-    } 
-}
+} 
 
 export function getDiets(){
     return function(dispatch){
