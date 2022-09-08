@@ -9,27 +9,25 @@ const router = Router();
 // Ejemplo: router.use('/auth', authRouter);
 const arrDiets = [
     'Gluten Free',
+    'Dairy Free',
     'Ketogenic',
-    'Vegetarian',
-    'Lacto-Vegetarian',
-    'Ovo-Vegetarian',
+    'Lacto Ovo Vegetarian',
     'Vegan',
-    'Pescetarian',
+    'Pescatarian',
     'Paleo',
     'Primal',
     'Low FODMAP',
-    'Whole30'
+    'Whole 30'
     ]
 
 router.get('/', async(req, res, next)=>{
+
     try {
-      
-       let allDiets = await Diet.findAll()
-       if (allDiets.length){
-          return  res.send(allDiets)
-       } else {
-        return res.send(await  Promise.all( arrDiets.map(async r=> await Diet.create({name: r}))))
-    }
+        let allDiets = await Diet.findAll()
+        if (allDiets.length) return res.send(allDiets);
+        else return res.send(await  Promise.all( arrDiets.map(async r=> await Diet.create({name: r}))));
+       
+
    } catch (error) {
        next(error)
    }

@@ -7,7 +7,7 @@ const dbData = async () => {
         include: {
           model: Diet,
           attributes: ["name"],
-          //through: { attributes: [] }
+          through: { attributes: [] }
         },
     });
 
