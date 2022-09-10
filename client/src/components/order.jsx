@@ -1,5 +1,6 @@
 import { sort } from "../store/actions";
 import { useDispatch } from "react-redux";
+import style from '../styleSheets/order.module.css'
 
 export default function Order(){
     const dispatch = useDispatch()
@@ -7,13 +8,13 @@ export default function Order(){
         dispatch(sort(e.target.value))
     }
     return (
-      <>
-      <label htmlFor="selectHSOrder">Nombre</label>  
-    <select name="select" onChange={onSelectChange}>
-    <option value="ordenar">ordenar por nombre</option>
-    <option value="ascendente">A-Z</option>
-    <option value="descendente">Z-A</option>
-  </select>
-  </>
+    < section className={style.order}>
+      <label className={style.label} htmlFor="orderName">Name: </label>  
+      <select className={style.select} id='orderName'name="select" onChange={onSelectChange}>
+          <option value="ordenar">Order by name...</option>
+          <option value="ascendente">A-Z</option>
+          <option value="descendente">Z-A</option>
+        </select>
+    </section>
     )
 }

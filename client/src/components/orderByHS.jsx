@@ -1,5 +1,6 @@
 import { sortByHS } from "../store/actions";
 import { useDispatch } from "react-redux";
+import style from '../styleSheets/orderByHS.module.css'
 
 export default function OrderByHS(){
     const dispatch = useDispatch()
@@ -7,14 +8,14 @@ export default function OrderByHS(){
         dispatch(sortByHS(e.target.value))
     }
     return (
-    <>
-    <label htmlFor="selectHSOrder">Health Socre</label>
-    <select name="selectHSOrder" onChange={onSelectChange}>
-    <option value="order">ordenar por Health Score de...</option>
-    <option value="ascendente">Menor-Mayor</option>
-    <option value="descendente">Mayor-Menor</option>
+      < section className={style.order}>
+    <label className={style.label} htmlFor="selectHSOrder">Health Socre</label>
+    <select className={style.select} name="selectHSOrder" onChange={onSelectChange}>
+    <option value="order">Order by Health Score...</option>
+    <option value="ascendente">Min-Max</option>
+    <option value="descendente">Max-Min</option>
   </select>
-  </>
+  </section>
 
     ) 
 }

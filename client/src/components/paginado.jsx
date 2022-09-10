@@ -1,4 +1,6 @@
 import React from "react";
+import style from '../styleSheets/paginado.module.css';
+
 
 export default function Paginado ({recipesPerPage, recipes, setCurrentPage}){
     const pages = [];
@@ -8,13 +10,13 @@ export default function Paginado ({recipesPerPage, recipes, setCurrentPage}){
 
     return(
         <div >
-        <button onClick={() => setCurrentPage((curr) => curr!== 1? curr - 1 : curr)}>prev</button>
+        <button className={style.button} id={style.prev} onClick={() => setCurrentPage((curr) => curr!== 1? curr - 1 : curr)}>prev</button>
         {   pages &&
             pages.map((p, index) => {
-                return <button key={index} onClick={() => setCurrentPage(p)}>{p}</button>
+                return <button  className={style.button} key={index} onClick={() => setCurrentPage(p)}>{p}</button>
             })
         }
-        <button onClick={() => setCurrentPage((curr) =>curr!== pages.length ? curr + 1 : curr)}>next</button>
+        <button  className={style.button} id={style.next} onClick={() => setCurrentPage((curr) =>curr!== pages.length ? curr + 1 : curr)}>next</button>
     </div>
     )
 }

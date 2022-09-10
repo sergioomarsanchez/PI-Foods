@@ -1,0 +1,31 @@
+.order {
+    margin: 1rem;
+
+}
+
+.label {
+    margin: 1rem;
+    color: antiquewhite;
+    background-color: #4228009d;
+    padding: 4px;
+    border-radius: 5px;
+   
+}
+
+.select {
+    background-color: #e2deda;
+    border: 2px solid #422800;
+    border-radius: 5px;
+    box-shadow: #422800 2px 2px 0 0;
+    color: #422800;
+    cursor:auto;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 12px;
+    padding:  5px;
+    line-height: 15px;
+    text-align: center;
+    margin-left: 1px;
+    margin-right: 1rem;
+    
+}

@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {searchRecipe, searchRecipeById} from '../store/actions';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import style from '../styleSheets/searchBar.module.css';
 
 
 export default function SearchBar(){
@@ -28,15 +28,13 @@ const dispatch = useDispatch()
    
 
 
-    return( <div> 
-        <Link to='/addRecipe' >Crear Receta</Link>
-
+    return( <div className={style.container}> 
         <form onSubmit={onSubmit}>
-        <input type='text' 
+        <input className={style.input} type='text' 
         onChange={onInputChange} 
         value={search} 
-        placeholder='Buscar receta'/>
-        <input type='submit' value='Buscar'/>
+        placeholder='Search Recipe'/>
+        <input className={style.button} type='submit' value='Search'/>
         </form>
     </div>
     )

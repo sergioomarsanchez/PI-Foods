@@ -3,28 +3,29 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { postRecipe, getDiets } from "../store/actions";
+import style from '../styleSheets/addRecipe.module.css';
 
 function validate(input){
     let errors = {};
     if(!input.name){
-        errors.name = 'Se requiere un nombre de receta'
+        errors.name = 'A name is required'
     }
     if(!input.summary){
-        errors.summary = 'Se requiere un resumen de la receta'
+        errors.summary = 'A summary of your recipe is required'
     }
     if (!input.healthScore){
-            errors.healthScore = 'Se requiere un Health Score de la receta'
+            errors.healthScore = 'The health score of your recipe is required'
     } 
     if(!input.steps){
-        errors.steps = 'Se requiere los pasos/steps de la receta'
+        errors.steps = 'The steps of your recipe is required'
     }
      if(!input.diets.length){
-        errors.diets = 'Se requiere al menos un tipo de dieta para la receta'
+        errors.diets = 'At least one type of recipe is required'
     }
     if (isNaN(Number(input.healthScore))){
-        errors.healthScore = 'Se requiere que el Health Score sea un número'
+        errors.healthScore = 'The health score must be a number'
     } else if (input.healthScore>100 || input.healthScore<1){
-        errors.healthScore = 'El Health Score debe ubicarse ente 1 y 100'
+        errors.healthScore = 'The health score must be a number between 1 and 100'
     }
     return errors
 }
@@ -100,36 +101,49 @@ export default function AddRecipe(){
 
     return (
         <>
-        <Link to='/home'><button>Volver</button> </Link>
-        <h1>Crea tu Receta!</h1>
-   <form onSubmit={e=>handleSubmit(e)}>
-   <label>Nombre</label> <input type="text" placeholder="ej. Tiramisú" value={input.name} name='name' onChange={(e)=>handleChange(e)}/>
-   {errors.name? <span>*{errors.name}</span>: null}
-   <label>Resumen</label> <input type="text" placeholder="resumen"value={input.summary} name='summary' onChange={(e)=>handleChange(e)}/>
-   {errors.summary? <span>*{errors.summary}</span>: null}
-   <label>Health Socre (1-100)</label><input type="text" placeholder="1-100" value={input.healthScore} name='healthScore' onChange={(e)=>handleChange(e)}/>
-   {errors.healthScore? <span>*{errors.healthScore}</span>: null}
-   <label>Pasos</label> <input type="text" placeholder="pasos" value={input.steps} name='steps' onChange={(e)=>handleChange(e)}/>
-   {errors.steps? <span>*{errors.steps}</span>: null}
-   <h3>Selecciona tipo de dieta</h3>
-   {errors.diets? <span>*{errors.diets}</span>: null}
+        <Link to='/home'><button id={style.buttonBack} className={style.buttonBack} >Back to home</button> </Link>
+        <div className={style.container}>
+        <h1>Create your Recipe!</h1>
+   <form className={style.form} onSubmit={e=>handleSubmit(e)}>
+   <div>
+   <label>Name: </label> <br /><input className={style.inputs} type="text" placeholder="e.g. Tiramisú" value={input.name} name='name' onChange={(e)=>handleChange(e)}/>
+   {errors.name? <div className={style.errorDiv}>*{errors.name}</div>: null}
+   </div>
+   <div>
+   <label>Health Socre (1-100): </label><br /><input  className={style.inputs} type="text" placeholder="1-100" value={input.healthScore} name='healthScore' onChange={(e)=>handleChange(e)}/>
+   {errors.healthScore? <div className={style.errorDiv}>*{errors.healthScore}</div>: null}
+   </div>
+   <div>
+   <label>Symmary: </label><br /> <input id={style.summary} className={style.inputs}  type="text" placeholder="summary"value={input.summary} name='summary' onChange={(e)=>handleChange(e)}/>
+   {errors.summary? <div className={style.errorDiv}>*{errors.summary}</div>: null}
+   </div>
+   <label>Steps: </label><input  id={style.steps} className={style.inputs} type="text" placeholder="steps" value={input.steps} name='steps' onChange={(e)=>handleChange(e)}/>
+   {errors.steps? <div className={style.errorDiv}>*{errors.steps}</div>: null}
+   <div>
+   <h3>Pick type of diet/s</h3>
+   {errors.diets? <div className={style.errorDiv}>*{errors.diets}</div>: null}
+   </div>
+   <div>
    {
        diets?.map(d=>{
            return <>
-           <input
+           <input className={style.checkbox}
+           id={d.name}
            type='checkbox'
            onChange={(e)=>handleCheck(e)}
            value={d.name==='Low FODMAP'
                            ? 'fodmap friendly'
                            : d.name ==='Paleo'
                            ? 'paleolithic'
-                           : d.name.toLowerCase()} /> 
-        <label name={d.name} key={d.name}>{d.name}</label>    
+                           : d.name.toLowerCase()}/> 
+        <label className={style.checkboxLbl} htmlFor={d.name} key={d.name}>{d.name}</label> 
         </> 
        })
    }
-   <input type="submit" disabled={Object.keys(errors).length!== 0 || !input.name ? true : false} value='submit'/>
+   <input className={style.buttonBack} type="submit" disabled={Object.keys(errors).length!== 0 || !input.name ? true : false} value='Add your Recipe'/>
+   </div>
    </form>
+   </div>
    </>
     ) 
 }

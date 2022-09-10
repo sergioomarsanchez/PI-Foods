@@ -1,0 +1,133 @@
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items:center;
+    text-shadow: 3px 3px #e2deda;
+    font-weight: bold;
+    padding:  5px;
+    text-align: center;
+}
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items:center;
+    color: #422800;
+    font-weight: bold;
+    font-size: 18px;
+    padding:  5px;
+    text-align: center;
+    background-color: #e2dedac3;
+    border: 2px solid #422800;
+    border-radius: 5px;
+    max-width: fit-content;
+}
+
+.errorDiv {
+    color: red;
+    font-size: 12px;
+}
+
+.inputs {
+    background-color: #e2deda;
+    border: 2px solid #422800;
+    border-radius: 5px;
+    box-shadow: #422800 2px 2px 0 0;
+    color: #422800;
+    cursor:auto;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 12px;
+    padding:  5px;
+    line-height: 15px;
+    text-align: center;
+    margin: 5px;
+}
+
+.checkbox {
+  cursor: pointer;
+}
+.checkboxLbl {
+    cursor: pointer;
+  }
+
+#summary {
+    display: flex;
+    flex-wrap: wrap;
+    width: 40rem;
+    height: 5rem;
+
+}
+
+#steps {
+    display: flex;
+    flex-wrap: wrap;
+    width: 40rem;
+    height: 5rem;
+}
+#buttonBack {
+    position: relative;
+    top: 2rem;
+    left: 3rem;
+}
+
+.buttonBack {
+  background-color: #e2deda;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 12px;
+  padding:  5px;
+  line-height: 15px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 5px;
+  margin-right: 2rem;
+}
+
+.buttonBack:disabled {
+    background-color: #848484;
+    border: 2px solid #000000;
+    border-radius: 30px;
+    box-shadow: #3a3a3a 4px 4px 0 0;
+    color: #222222;
+    cursor:not-allowed;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 12px;
+    padding:  5px;
+    line-height: 15px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    margin: 5px;
+    margin-right: 2rem;
+}
+.buttonBack:hover {
+    background-color: #fff;
+  }
+
+
+.buttonBack:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+  }
+
+  @media (min-width: 768px) {
+    .buttonBack {
+      min-width: 80px;
+      padding: 15px;
+    }
+  }
