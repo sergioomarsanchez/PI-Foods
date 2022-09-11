@@ -8,11 +8,13 @@ export default function LandingPage(){
     return (<>
     <div className={style.container}>
         <Link to='/home'>
-        <h1 className={style.h1}>The food app</h1>
-        <div className={style.linkHome} >
-             Lets get started
-        </div>
+        <h1 className={style.linkHome} >
+        The food app
+        </h1>
+        <h1 className={style.h1}>Lets get started</h1>
         </Link>
+       
+       
  
     <video className={style.video} loop autoPlay muted>
         <source src={vid} type='video/mp4'>

@@ -53,7 +53,9 @@ const router = Router();
 router.post('/', async(req, res, next)=>{
   try {
     const { name, summary, diets, healthScore, steps } = req.body
-    if(!name || !summary || !diets || !healthScore || !steps) return res.status(404).send({ msg: 'Faltan datos para crear la Receta' });
+    if(!name || !summary || !diets || !healthScore || !steps) return res.status(404).send({ msg: 'There is some missing data to create your Recipe' });
+    if(isNaN(Number(healthScore)) || healthScore < 1 || healthScore > 100) return res.status(404).send({ msg: 'The Health Score must be a number between 1 and 100'});
+   
     const newRecipe = await Recipe.create({
           name,
           summary,

@@ -20,7 +20,7 @@ function validate(input){
         errors.steps = 'The steps of your recipe is required'
     }
      if(!input.diets.length){
-        errors.diets = 'At least one type of recipe is required'
+        errors.diets = 'At least one type of diet is required'
     }
     if (isNaN(Number(input.healthScore))){
         errors.healthScore = 'The health score must be a number'
@@ -88,7 +88,7 @@ export default function AddRecipe(){
        input.name = input.name.charAt(0).toUpperCase()+input.name.slice(1)
         console.log(input)
         dispatch(postRecipe(input))
-        alert('Receta creada!!')
+        alert('Your recipe has been created!!')
         setInput({
             name:'',
             summary:'',
@@ -114,7 +114,7 @@ export default function AddRecipe(){
    {errors.healthScore? <div className={style.errorDiv}>*{errors.healthScore}</div>: null}
    </div>
    <div>
-   <label>Symmary: </label><br /> <input id={style.summary} className={style.inputs}  type="text" placeholder="summary"value={input.summary} name='summary' onChange={(e)=>handleChange(e)}/>
+   <label>Summary: </label><br /> <input id={style.summary} className={style.inputs}  type="text" placeholder="summary"value={input.summary} name='summary' onChange={(e)=>handleChange(e)}/>
    {errors.summary? <div className={style.errorDiv}>*{errors.summary}</div>: null}
    </div>
    <label>Steps: </label><input  id={style.steps} className={style.inputs} type="text" placeholder="steps" value={input.steps} name='steps' onChange={(e)=>handleChange(e)}/>

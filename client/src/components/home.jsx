@@ -31,7 +31,7 @@ export default function Home(){
     }
     function handleClick(e){
         e.preventDefault()
-        dispatch(filterDiet('sin filtro'))
+        dispatch(filterDiet('No filter'))
         refreshPage()
     }
 
@@ -43,11 +43,11 @@ export default function Home(){
         dispatch(fetchRecipes())
     }, [])
      return( <div className={style.homeContainer}>
-          <Link to='/addRecipe' ><button className={style.button}>Create your Recipe</button></Link>
+          <Link to='/addRecipe' ><button className={style.button}>Create your Recipe!</button></Link>
          <nav className={style.navContainer}>
-          <FilterDiet/>
           <Order/>
           <OrderByHS/>
+          <FilterDiet/>
           <SearchBar/>
           </nav>
           <button className={style.button} onClick={handleClick} >

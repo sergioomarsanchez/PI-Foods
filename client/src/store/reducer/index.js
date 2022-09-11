@@ -57,25 +57,27 @@ export default function reducer(state = initialState, action){
                 } 
 
         case FILTER_DIETS:
-            if(action.payload==='sin filtro'){
+            if(action.payload==='No filter'){
                 return {
                     ...state,
-                    filteredRecipes: []
+                    filteredRecipes: [...state.recipes]
+                }
+            } else {
+
+                let filteredRecipes = [...state.recipes]
+                filteredRecipes = filteredRecipes.filter(r =>{
+                    if(r.id.length>6){
+                        return r.diets.map(d=>d.name.toLowerCase()).includes(action.payload.toLowerCase())
+                    }
+                 return r.diets.includes(action.payload.toLowerCase())
+                })
+               
+                return {
+                    ...state,
+                    filteredRecipes: filteredRecipes
                 }
             }
             
-            let filteredRecipes = [...state.recipes]
-            filteredRecipes = filteredRecipes.filter(r =>{
-                if(r.id.length>6){
-                    return r.diets.map(d=>d.name.toLowerCase()).includes(action.payload.toLowerCase())
-                }
-             return r.diets.includes(action.payload.toLowerCase())
-            })
-           
-            return {
-                ...state,
-                filteredRecipes: filteredRecipes
-            }
         case GET_DIETS:
             return {
                 ...state,
