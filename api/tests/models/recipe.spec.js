@@ -17,6 +17,12 @@ describe('Recipe model', () => {
       it('should work when its a valid name', () => {
         Recipe.create({ name: 'Milanesa a la napolitana' });
       });
+      it('should throw an error if highscore is not a number', (done) => {
+        Recipe.create({ healthScore:'hola'})
+          .then(() => done(new Error('It requires a valid health score')))
+          .catch(() => done());
+      });
+    
     });
   });
 });

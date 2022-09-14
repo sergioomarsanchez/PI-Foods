@@ -42,3 +42,41 @@
       padding: 5px;
     }
   }
+
+  .buttonCurr {
+    background-color: #422800;
+    border: 2px solid #e2deda;
+    border-radius: 30px;
+    box-shadow: #e2deda 4px 4px 0 0;
+    color: #e2deda;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 12px;
+    padding:  8px;
+    line-height: 15px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.buttonCurr:hover {
+  background-color: rgb(244, 244, 244);
+  color: #422800
+}
+
+.buttonCurr:active {
+  box-shadow: #e2deda 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .buttonCurr {
+    min-width: 50px;
+    padding: 5px;
+  }
+}

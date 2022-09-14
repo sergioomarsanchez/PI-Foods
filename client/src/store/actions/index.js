@@ -19,7 +19,7 @@ export function fetchRecipes(){
                 payload:recipes.data
                 })
             })
-        .catch(e=>console.log(e))
+        .catch(e=>alert(e.response.data.msg))
     }
 }
 
@@ -31,7 +31,7 @@ export function searchRecipeById(id){
                 payload:[recipe.data]
              })
         })
-        .catch(e=>console.log(e));    
+        .catch(e=>alert(e.response.data.msg));    
         
     }
 } 
@@ -45,7 +45,7 @@ export function searchRecipe(name){
                 payload:recipes.data
                 })
             })
-            .catch(e=>console.log(e))
+            .catch(e=>alert(e.response.data.msg))
     }
 } 
 
@@ -58,7 +58,7 @@ export function getDiets(){
              payload:diets.data
              })
          })
-        .catch(e=>console.log(e))    
+        .catch(e=>alert(e.response.data.msg))    
     }
 
 }
@@ -72,12 +72,12 @@ export function getDetail (id){
             payload:recipe.data
             })
     })
-    .catch(e=>console.log(e));    
+    .catch(e=>alert(e.response.data.msg));    
     
     }
 }
 export function postRecipe(payload){
-    return async function(dispatch){
+    return async function(){
        const response =  await axios.post('http://localhost:3001/api/recipes', payload)
         console.log( await response)
         return  await response;

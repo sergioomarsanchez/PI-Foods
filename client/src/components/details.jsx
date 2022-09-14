@@ -11,7 +11,7 @@ const dispatch = useDispatch();
 
 useEffect(()=>{
     dispatch(getDetail(props.match.params.id));
-}, [dispatch])
+}, [])
 useEffect(()=>{
  return dispatch(cleanRecipe());
 }, [])
@@ -25,7 +25,7 @@ return (
         
     {
       Object.keys(recipe).length?
-      recipe.id.legth> 6?
+      isNaN(Number(recipe.id)) ?
       <div className={style.container}>
           <h2>Recipe Name: {recipe.name}</h2>
           <span>Health Score {recipe.healthScore}</span>

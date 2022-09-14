@@ -9,7 +9,7 @@ export default function OrderByHS(){
     }
     return (
       < section className={style.order}>
-    <label className={style.label} htmlFor="selectHSOrder">Health Socre</label>
+    <label className={style.label} htmlFor="selectHSOrder">Health Score</label>
     <select className={style.select} name="selectHSOrder" onChange={onSelectChange}>
     <option value="order">Order by Health Score...</option>
     <option value="ascendente">Min-Max</option>

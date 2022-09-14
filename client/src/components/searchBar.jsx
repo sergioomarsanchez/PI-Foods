@@ -13,11 +13,11 @@ const dispatch = useDispatch()
        e.preventDefault()
        console.log(search)
        if(!isNaN(Number(search)) || search.includes('-')){
-           console.log('entreé a search por id con ' + search)
+           console.log('entré a search por id con ' + search)
            dispatch(searchRecipeById(search))
            setSearch('')
        } else if(search){
-        console.log('entreé a search por name con ' + search)
+        console.log('entré a search por name con ' + search)
         dispatch(searchRecipe(search))
         setSearch('')
    }
@@ -34,7 +34,7 @@ const dispatch = useDispatch()
         onChange={onInputChange} 
         value={search} 
         placeholder='Search Recipe'/>
-        <input className={style.button} type='submit' value='Search'/>
+        <input className={style.button} disabled={!search || search === '' ? true : false} type='submit' value='Search'/>
         </form>
     </div>
     )

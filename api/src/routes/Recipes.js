@@ -21,7 +21,7 @@ const router = Router();
        
             result.length 
             ? res.status(200).json(result)
-            : res.status(404).send({ msg : 'Receta no encontrada'})
+            : res.status(404).send({ msg : 'Recipe not found'})
             
         } else {
       return res.status(200).json(getAll)
@@ -35,13 +35,13 @@ const router = Router();
        const idFound = await Recipe.findByPk(idRecipe, { include : Diet })
         return idFound 
                ? res.json(idFound)
-               : res.status(404).send({ msg: 'Receta no encontrada'})
+               : res.status(404).send({ msg: 'Recipe not found'})
     } else{
         try {
             const recetaApi = await getIdFromApi(idRecipe)
             return recetaApi 
                    ? res.json(recetaApi)
-                   : res.status(404).send({ msg: 'Receta no encontrada'})
+                   : res.status(404).send({ msg: 'Recipe not found'})
         } catch (error) {
             next(error)
         }
@@ -82,8 +82,8 @@ router.post('/', async(req, res, next)=>{
               }
           })
           if(diet){
-            newRecipe.addDiets(diet)
-        }else { return res.status(404).send({ msg: 'Tipo de dieta inexistente' })
+          await  newRecipe.addDiets(diet)
+        }else { return res.status(404).send({ msg: 'Type of diet not found' })
     }
 }
 return res.send('success')
@@ -95,14 +95,20 @@ return res.send('success')
 
 })
 
+// router.delete('/', async(req, res, next)=>{
+//   let { id } = req.params
+//   let recipeToDelete = Recipe.findByPk(id)
+
+//   try {
+//     await recipeToDelete.distroy()
+
+//     res.send({ msg : 'Recipe deleted'})
+    
+//   } catch (error) {
+//     next(error)
+//   }
 
 
-router.put('/', (req, res, next)=>{
-    res.send('estoy andando')
-})
-
-router.delete('/', (req, res, next)=>{
-    res.send('estoy andando')
-})
+// })
 
 module.exports = router;

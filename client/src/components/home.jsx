@@ -56,17 +56,18 @@ export default function Home(){
           <Paginado 
           recipesPerPage={recipesPerPage}
           recipes={filteredRecipes.length? filteredRecipes.length : recipes.length}
-          setCurrentPage={paginado}/>
+          setCurrentPage={paginado}
+          currentPage={currentPage}/>
 
+                {currentRecipes.length?
           <div className={style.cardsContainer}>
-                {currentRecipes?
-                currentRecipes.map((recipe)=>{
+                {currentRecipes?.map((recipe)=>{
                     if(recipe.id.length > 6){
                         return <RecipeCard id={recipe.id}
                         name={recipe.name}
                         diets={recipe.diets.map(d=>d.name.toLowerCase())}
                         image= 'https://i.pinimg.com/736x/7c/30/0d/7c300d26bc4a08e1cd78828a16c5ccca.jpg'
-                        type={['indefinido']}
+                        type={['']}
                         healthScore={recipe.healthScore}/>
                     }else
                     return <RecipeCard id={recipe.id}
@@ -75,10 +76,10 @@ export default function Home(){
                     image={recipe.image} 
                     type={recipe.type}
                     healthScore={recipe.healthScore}/>
-                })
-                :<img src="https://i.pinimg.com/originals/55/35/1c/55351c797f0f2edb3b8686a3e81c996a.gif" alt="gif de carga"/>
+                })}
+                </div>
+                :<span className="loader"></span>
                 }
-          </div>
     </div>
     )
 }

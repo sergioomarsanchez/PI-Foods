@@ -11,7 +11,7 @@ export default function LandingPage(){
         <h1 className={style.linkHome} >
         The food app
         </h1>
-        <h1 className={style.h1}>Lets get started</h1>
+        <h1 className={style.h1}>Let's get started</h1>
         </Link>
        
        

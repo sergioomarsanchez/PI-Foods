@@ -4,12 +4,14 @@ const initialState = {
     recipes : [],
     diets : [],
     filteredRecipes: [],
-    recipe : {}
+    recipe : {},
+    msg:''
 }
 
 export default function reducer(state = initialState, action){
     switch(action.type){
         case FETCH_RECIPES:
+            console.log(action.payload)
             return {
                 ...state,
                 recipes: action.payload,
@@ -17,6 +19,7 @@ export default function reducer(state = initialState, action){
              }
 
         case SEARCH_RECIPE:
+            console.log(action.payload)
             return {
                 ...state,
                 filteredRecipes: action.payload
