@@ -35,7 +35,7 @@ export default function AddRecipe(){
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getDiets())
+        if(!diets.length)dispatch(getDiets())
     }, [])
     const history = useHistory();
     const diets = useSelector((state)=>state.diets);

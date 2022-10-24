@@ -40,7 +40,7 @@ export default function Home(){
     }, [filteredRecipes])
 
     useEffect(() => {
-        dispatch(fetchRecipes())
+        if(!recipes.length)dispatch(fetchRecipes())
     }, [])
      return( <div className={style.homeContainer}>
           <Link to='/addRecipe' ><button className={style.button}>Create your Recipe!</button></Link>

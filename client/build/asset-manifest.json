@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.522c0949.chunk.css",
+    "main.js": "/static/js/main.c88cff78.chunk.js",
+    "main.js.map": "/static/js/main.c88cff78.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.723cfbcc.js",
+    "runtime-main.js.map": "/static/js/runtime-main.723cfbcc.js.map",
+    "static/js/2.8821cd79.chunk.js": "/static/js/2.8821cd79.chunk.js",
+    "static/js/2.8821cd79.chunk.js.map": "/static/js/2.8821cd79.chunk.js.map",
+    "static/js/3.ec930cd4.chunk.js": "/static/js/3.ec930cd4.chunk.js",
+    "static/js/3.ec930cd4.chunk.js.map": "/static/js/3.ec930cd4.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.522c0949.chunk.css.map": "/static/css/main.522c0949.chunk.css.map",
+    "static/js/2.8821cd79.chunk.js.LICENSE.txt": "/static/js/2.8821cd79.chunk.js.LICENSE.txt",
+    "static/media/Food Reel 2019.69b260fb.mp4": "/static/media/Food Reel 2019.69b260fb.mp4",
+    "static/media/landingPage.module.css": "/static/media/wasa-crispbread-kcZgDtkuB4g-unsplash.62767e02.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.723cfbcc.js",
+    "static/js/2.8821cd79.chunk.js",
+    "static/css/main.522c0949.chunk.css",
+    "static/js/main.c88cff78.chunk.js"
+  ]
+}
