@@ -34,21 +34,21 @@ function validate(input){
 export default function AddRecipe(){
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        if(!diets.length)dispatch(getDiets())
-    }, [])
     const history = useHistory();
     const diets = useSelector((state)=>state.diets);
     const [errors, setErrors] = useState({});
-
+    
     const [input, setInput] = useState({
         name:'',
         summary:'',
         healthScore: '',
         steps: '',
         diets: []
-
+        
     })
+    useEffect(() => {
+        if(!diets.length)dispatch(getDiets())
+    }, [diets.length, dispatch])
     
     function handleChange(e){
         setInput({
