@@ -18,8 +18,8 @@ export default function Home(){
     const [recipesPerPage, setRecipesPerPage]= useState(9);
     const indexOfLastRecipe = currentPage * recipesPerPage
     const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage
-    const currentRecipes = filteredRecipes.length? filteredRecipes?.slice(indexOfFirstRecipe, indexOfLastRecipe)
-                                          : recipes?.slice(indexOfFirstRecipe, indexOfLastRecipe)
+    const currentRecipes = filteredRecipes?.slice(indexOfFirstRecipe, indexOfLastRecipe)
+                                      
     let dispatch = useDispatch()
 
     const paginado = function (pageNumber){
