@@ -34,16 +34,16 @@ router.get('/', async(req, res, next)=>{
    }
 })
 
-router.post('/', (req, res, next)=>{
-    res.send('estoy andando')
-})
+// router.post('/', (req, res, next)=>{
+//     res.send('estoy andando')
+// })
 
-router.put('/', (req, res, next)=>{
-    res.send('estoy andando')
-})
+// router.put('/', (req, res, next)=>{
+//     res.send('estoy andando')
+// })
 
-router.delete('/', (req, res, next)=>{
-    res.send('estoy andando')
-})
+// router.delete('/', (req, res, next)=>{
+//     res.send('estoy andando')
+// })
 
 module.exports = router;
