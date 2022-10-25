@@ -13,4 +13,7 @@ const router = Router();
 router.use('/recipes', recipeRoute);
 router.use('/diets', dietRoute);
 
+router.get("/", (req, res)=>{
+    res.send('Inicial Page')
+})
 module.exports = router;
