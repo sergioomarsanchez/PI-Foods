@@ -11,7 +11,6 @@ const initialState = {
 export default function reducer(state = initialState, action){
     switch(action.type){
         case FETCH_RECIPES:
-            console.log(action.payload)
             return {
                 ...state,
                 recipes: action.payload,

@@ -86,7 +86,6 @@ export default function AddRecipe(){
     function handleSubmit(e){
         e.preventDefault()
        input.name = input.name.charAt(0).toUpperCase()+input.name.slice(1)
-        console.log(input)
         dispatch(postRecipe(input))
         dispatch(fetchRecipes())
         alert('Your recipe has been created!!')

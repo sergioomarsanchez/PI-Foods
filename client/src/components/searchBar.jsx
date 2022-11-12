@@ -11,13 +11,10 @@ const dispatch = useDispatch()
 
    function onSubmit(e){
        e.preventDefault()
-       console.log(search)
        if(!isNaN(Number(search)) || search.includes('-')){
-           console.log('entré a search por id con ' + search)
            dispatch(searchRecipeById(search))
            setSearch('')
        } else if(search){
-        console.log('entré a search por name con ' + search)
         dispatch(searchRecipe(search))
         setSearch('')
    }

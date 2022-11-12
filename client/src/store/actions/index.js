@@ -79,7 +79,6 @@ export function getDetail (id){
 export function postRecipe(payload){
     return async function(){
        const response =  await axios.post('https://pi-food-backend-production.up.railway.app/api/recipes', payload)
-        console.log( await response)
         return  await response;
     }
 }
