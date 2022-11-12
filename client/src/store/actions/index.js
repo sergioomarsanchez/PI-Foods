@@ -12,7 +12,7 @@ export const CLEAN_RECIPE = 'CLEAN_RECIPE';
 
 export function fetchRecipes(){
         return function (dispatch){
-        axios.get(`http://localhost:3001/api/recipes/`)
+        axios.get(`https://pi-food-backend-production.up.railway.app/api/recipes/`)
         .then((recipes)=>{
              dispatch({
                 type:FETCH_RECIPES,
@@ -24,7 +24,7 @@ export function fetchRecipes(){
 }
 
 export function searchRecipeById(id){
-        return function(dispatch){axios.get(`http://localhost:3001/api/recipes/${id}`)
+        return function(dispatch){axios.get(`https://pi-food-backend-production.up.railway.app/api/recipes/${id}`)
         .then((recipe)=>{
             dispatch({
                 type:SEARCH_RECIPE,
@@ -38,7 +38,7 @@ export function searchRecipeById(id){
 
 export function searchRecipe(name){
         return function (dispatch){
-        axios.get(`http://localhost:3001/api/recipes?name=${name}`)
+        axios.get(`https://pi-food-backend-production.up.railway.app/pi/recipes?name=${name}`)
         .then((recipes)=>{
              dispatch({
                 type:SEARCH_RECIPE,
@@ -51,7 +51,7 @@ export function searchRecipe(name){
 
 export function getDiets(){
     return function(dispatch){
-        axios.get(`http://localhost:3001/api/diets`)
+        axios.get(`https://pi-food-backend-production.up.railway.app/api/diets`)
         .then((diets)=>{
             dispatch({
              type:GET_DIETS,
@@ -65,7 +65,7 @@ export function getDiets(){
 
 export function getDetail (id){
 
-    return function(dispatch){axios.get(`http://localhost:3001/api/recipes/${id}`)
+    return function(dispatch){axios.get(`https://pi-food-backend-production.up.railway.app/api/recipes/${id}`)
     .then((recipe)=>{
         dispatch({
             type:GET_DETAIL,
@@ -78,7 +78,7 @@ export function getDetail (id){
 }
 export function postRecipe(payload){
     return async function(){
-       const response =  await axios.post('http://localhost:3001/api/recipes', payload)
+       const response =  await axios.post('https://pi-food-backend-production.up.railway.app/api/recipes', payload)
         console.log( await response)
         return  await response;
     }
