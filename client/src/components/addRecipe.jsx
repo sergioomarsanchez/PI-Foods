@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { postRecipe, getDiets } from "../store/actions";
+import { postRecipe, getDiets, fetchRecipes } from "../store/actions";
 import style from '../styleSheets/addRecipe.module.css';
 
 function validate(input){
@@ -88,6 +88,7 @@ export default function AddRecipe(){
        input.name = input.name.charAt(0).toUpperCase()+input.name.slice(1)
         console.log(input)
         dispatch(postRecipe(input))
+        dispatch(fetchRecipes())
         alert('Your recipe has been created!!')
         setInput({
             name:'',
