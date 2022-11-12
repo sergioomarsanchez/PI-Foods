@@ -38,7 +38,7 @@ export function searchRecipeById(id){
 
 export function searchRecipe(name){
         return function (dispatch){
-        axios.get(`https://pi-food-backend-production.up.railway.app/pi/recipes?name=${name}`)
+        axios.get(`https://pi-food-backend-production.up.railway.app/api/recipes?name=${name}`)
         .then((recipes)=>{
              dispatch({
                 type:SEARCH_RECIPE,
