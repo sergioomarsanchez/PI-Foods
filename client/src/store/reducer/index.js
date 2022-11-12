@@ -18,7 +18,6 @@ export default function reducer(state = initialState, action){
              }
 
         case SEARCH_RECIPE:
-            console.log(action.payload)
             return {
                 ...state,
                 filteredRecipes: action.payload
