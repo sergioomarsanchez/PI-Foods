@@ -59,9 +59,8 @@ export default function Home(){
           setCurrentPage={paginado}
           currentPage={currentPage}/>
 
-                {currentRecipes.length?
           <div className={style.cardsContainer}>
-                {currentRecipes?.map((recipe)=>{
+                {recipes.length?currentRecipes?.map((recipe)=>{
                     if(recipe.id.length > 6){
                         return <RecipeCard id={recipe.id}
                         name={recipe.name}
@@ -76,10 +75,11 @@ export default function Home(){
                     image={recipe.image} 
                     type={recipe.type}
                     healthScore={recipe.healthScore}/>
-                })}
+                }):<div className={style.loaderContainer}> <span className={style.loader}></span></div>
+            }
                 </div>
-                :<span className="loader"></span>
-                }
+                
+                
     </div>
     )
 }

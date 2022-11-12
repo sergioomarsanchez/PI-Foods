@@ -56,7 +56,18 @@
     padding: 15px;
   }
 }
-
+.loaderContainer {
+  background-color: #9f9e9ec1;
+  margin-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items:center;
+  border-radius: 40px;
+  border: 2px solid #422800;
+  width: 600px;
+  height: 400px;
+}
 .loader {
   position: relative;
   width: 120px;
