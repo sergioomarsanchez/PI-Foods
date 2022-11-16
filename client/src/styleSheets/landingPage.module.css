@@ -68,3 +68,18 @@ body {
     0px 8px 13px rgba(187, 154, 154, 0.551),
     0px 18px 23px rgba(133, 115, 115, 0.323);
 }
+
+
+@media screen and (max-width: 570px){
+    .linkHome{
+        font-size: 5rem;
+        top: 10%;
+        left: 20%;
+    }
+
+    .h1 {
+        top : 50%;
+        left: 20%;
+    }
+    
+}
