@@ -57,7 +57,7 @@
   }
 }
 .loaderContainer {
-  background-color: #9f9e9ec1;
+  background-color: #e2deda;
   margin-top: 4rem;
   display: flex;
   flex-wrap: wrap;
@@ -116,6 +116,77 @@ background-position: right center , 17px center , 0px center;
   animation: eggRst 1s ease-out infinite;
 }
 
+.noselect {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-color: #422800;
+  border: none;
+  border-radius: 20%;
+  transition: 200ms;
+}
+.noselectLight {
+width: 40px;
+height: 40px;
+cursor: pointer;
+background-color: #692b2b;
+border: none;
+border-radius: 20%;
+transition: 200ms;
+}
+
+#toTop {
+  align-self: flex-end;
+  font-size: 5px;
+  margin-bottom: 2rem;
+  margin-right: 1rem;
+}
+
+#toTop svg {
+  fill: #e2deda;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  animation: bounce 2s infinite linear;
+}
+
+#toTop:before  {
+  content: 'Back to Top';
+  position: absolute;
+  transform: translateX(-50%) translateY(25px);
+  font-size: 6px;
+  transition: 200ms;
+  color: transparent;
+  font-weight: bold;
+}
+
+#toTop:hover {
+  box-shadow: 0 1px 5px rgba(255, 255, 255, 0.2);
+  transform: scale(1.2);
+}
+
+
+#toTop:hover::before {
+  color: #422800;
+}
+
+
+#toTop:hover svg {
+      animation: bounce 2s infinite linear;
+}
+@keyframes bounce {
+  0% {transform: translateX(-50%) translateY(-50%)}
+  25% {transform: translateX(-50%) translateY(-65%)}
+  50% {transform: translateX(-50%) translateY(-50%)}
+  75% {transform: translateX(-50%) translateY(-35%)}
+  100% {transform: translateX(-50%) translateY(-50%)}
+}
+
+#toTop:focus {
+  outline: none;
+}
+
 @keyframes eggRst {
 0% ,  100%{  transform: translate(-50%, -20px) rotate3d(90, 0, 0, 90deg); opacity: 0; }
 10% , 90% {  transform: translate(-50%, -30px) rotate3d(90, 0, 0, 90deg); opacity: 1; }
@@ -126,4 +197,12 @@ background-position: right center , 17px center , 0px center;
 @keyframes panex {
 0%{  transform: rotate(-5deg)  }
 100%{  transform: rotate(10deg)  }
+}
+
+
+@media (max-width: 520px) {
+  .loaderContainer {
+
+    width: 350px;
+  }
 }

@@ -35,13 +35,6 @@
     box-shadow: #422800 2px 2px 0 0;
     transform: translate(2px, 2px);
   }
-  
-  @media (min-width: 768px) {
-    .button {
-      min-width: 50px;
-      padding: 5px;
-    }
-  }
 
   .buttonCurr {
     background-color: #422800;
@@ -73,10 +66,38 @@
   box-shadow: #e2deda 2px 2px 0 0;
   transform: translate(2px, 2px);
 }
+.noselect, .noselectLight {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+        -webkit-tap-highlight-color: transparent;
+}
 
-@media (min-width: 768px) {
-  .buttonCurr {
-    min-width: 50px;
-    padding: 5px;
+
+
+
+@media (max-width: 520px) {
+  .button, .buttonCurr {
+
+    font-weight: 600;
+    font-size: 8px;
+    padding:  6px;
+    line-height: 15px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
   }
+  #next {
+    margin-left:0.5rem;
+}
+#prev {
+    margin-right:0.5rem;
+}
 }
