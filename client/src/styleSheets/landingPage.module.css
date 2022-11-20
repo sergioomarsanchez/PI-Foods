@@ -5,8 +5,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: top;
-    size: 100vw;
     position: relative;
+    height: max-content;
   }
 
 .container {
@@ -81,5 +81,5 @@ body {
         top : 60%;
         left: 20%;
     }
-    
+
 }

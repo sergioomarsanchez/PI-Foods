@@ -123,10 +123,10 @@ export default function AddRecipe(){
    <h3>Pick type of diet/s</h3>
    {errors.diets? <div className={style.errorDiv}>*{errors.diets}</div>: null}
    </div>
-   <div>
+   <div className={style.dietsOptions}>
    {
        diets?.map(d=>{
-           return <>
+           return <div className={style.dietOption}>
            <input className={style.checkbox}
            id={d.name}
            type='checkbox'
@@ -137,11 +137,11 @@ export default function AddRecipe(){
                            ? 'paleolithic'
                            : d.name.toLowerCase()}/> 
         <label className={style.checkboxLbl} htmlFor={d.name} key={d.name}>{d.name}</label> 
-        </> 
+        </div> 
        })
    }
-   <input className={style.buttonBack} type="submit" disabled={Object.keys(errors).length!== 0 || !input.name ? true : false} value='Add your Recipe'/>
    </div>
+   <input id={style.submitButton} className={style.buttonBack} type="submit" disabled={Object.keys(errors).length!== 0 || !input.name ? true : false} value='Add your Recipe'/>
    </form>
    </div>
    </>
