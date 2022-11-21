@@ -38,7 +38,7 @@ return (
       <h4>{recipe.diets?.map(d=>{return <span>{d}</span>})}</h4>
       <img className={style.img}src={recipe.image} alt="recipeImg" />
       <p className={style.p}>Summary: {recipe.summary?.replace(/<[^>]+>/g, "")}</p>
-      <p className={style.p}>Steps: {recipe.steps?.replace(/<[^>]+>/g, "")}</p>
+      {recipe.state ? <p className={style.p}>Steps: {recipe.steps?.replace(/<[^>]+>/g, "")}</p>:null}
      </div>
      : <div className={style.gifContainer}><h3>Loading...</h3><img className={style.gif} src="https://i.pinimg.com/originals/55/35/1c/55351c797f0f2edb3b8686a3e81c996a.gif" alt="gif de carga"/></div>
 }
